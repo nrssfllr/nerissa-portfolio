@@ -2,138 +2,341 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nerissa S. Fillar | IT Portfolio</title>
-<style>
-* { box-sizing: border-box; scroll-behavior: smooth; }
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #101827;
-  color: #f1f5f9;
-  line-height: 1.7;
-}
-header {
-  padding: 22px 8%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #17243a;
-  flex-wrap: wrap;
-}
-.logo { color: #67e8f9; font-weight: bold; font-size: 21px; }
-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 9px;
-  font-size: 14px;
-}
-nav a:hover { color: #67e8f9; }
-section { padding: 65px 9%; }
-.hero { min-height: 370px; display: flex; flex-direction: column; justify-content: center; }
-.hero h1 { font-size: clamp(35px, 7vw, 58px); margin: 10px 0; }
-.accent { color: #67e8f9; }
-.tag { color: #67e8f9; letter-spacing: 3px; }
-h2 { color: #67e8f9; font-size: 30px; }
-.card {
-  background: #1e2d44;
-  padding: 24px;
-  border-radius: 14px;
-  margin: 15px 0;
-  border: 1px solid #334155;
-}
-.skills { display: flex; flex-wrap: wrap; gap: 12px; }
-.skill {
-  background: #263e59;
-  color: #a5f3fc;
-  padding: 9px 17px;
-  border-radius: 20px;
-}
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
-  gap: 18px;
-}
-.project { min-height: 210px; }
-.project a { color: #67e8f9; }
-footer {
-  text-align: center;
-  padding: 25px;
-  background: #17243a;
-  color: #cbd5e1;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nerissa S. Fillar | IT Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #101827;
+            color: #f1f5f9;
+            line-height: 1.7;
+        }
+
+        header {
+            padding: 22px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #17243a;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            color: #67e8f9;
+            font-weight: bold;
+            font-size: 22px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #67e8f9;
+        }
+
+        section {
+            padding: 65px 9%;
+        }
+
+        .hero {
+            min-height: 420px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(35px, 7vw, 58px);
+            margin: 12px 0;
+        }
+
+        .accent {
+            color: #67e8f9;
+        }
+
+        .tag {
+            color: #67e8f9;
+            letter-spacing: 3px;
+            font-size: 13px;
+        }
+
+        h2 {
+            color: #67e8f9;
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+
+        .card {
+            background: #1e2d44;
+            padding: 25px;
+            border-radius: 14px;
+            margin: 15px 0;
+            border: 1px solid #334155;
+        }
+
+        .card h3 {
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill {
+            background: #263e59;
+            color: #a5f3fc;
+            padding: 9px 18px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .project {
+            min-height: 270px;
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+            border-color: #67e8f9;
+        }
+
+        .project p {
+            margin-bottom: 12px;
+            color: #cbd5e1;
+        }
+
+        .project strong {
+            color: #67e8f9;
+        }
+
+        .contact-link {
+            color: #67e8f9;
+            text-decoration: none;
+        }
+
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #17243a;
+            color: #cbd5e1;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            nav a {
+                margin: 0 4px;
+            }
+
+            section {
+                padding: 45px 7%;
+            }
+        }
+    </style>
 </head>
+
 <body>
-<header>
-  <div class="logo">NERISSA.</div>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
 
-<section class="hero">
-  <div class="tag">WELCOME TO MY PORTFOLIO</div>
-  <h1>Hello, I'm <span class="accent">Nerissa S. Fillar.</span></h1>
-  <h3>Aspiring IT Professional | Future Web Developer</h3>
-  <p>Learning, creating, and building my future through technology.</p>
-</section>
+    <!-- NAVIGATION -->
+    <header>
+        <div class="logo">NERISSA.</div>
 
-<section id="about">
-  <h2>About Me</h2>
-  <div class="card">
-    <h3>Nerissa S. Fillar</h3>
-    <p><strong>Course:</strong> Bachelor of Science in Information Technology</p>
-    <p>I am an Information Technology student who is passionate about learning new technologies and developing my skills in web development and digital design. I enjoy exploring creative ways to solve problems through technology and creating websites and applications that are both functional and user-friendly. I am always eager to learn new skills, gain experience, and improve my knowledge as I work toward becoming a successful IT professional.</p>
-  </div>
-</section>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-<section id="skills">
-  <h2>My Skills</h2>
-  <div class="skills">
-    <span class="skill">HTML</span>
-    <span class="skill">CSS</span>
-    <span class="skill">JavaScript</span>
-    <span class="skill">Canva</span>
-    <span class="skill">Figma</span>
-    <span class="skill">Web Design</span>
-    <span class="skill">Problem Solving</span>
-  </div>
-</section>
+    <!-- HOME SECTION -->
+    <section class="hero">
+        <div class="tag">WELCOME TO MY PORTFOLIO</div>
 
-<section id="projects">
-  <h2>My Projects</h2>
-  <div class="project-grid">
-    <div class="card project">
-      <h3>01. Personal Portfolio Website</h3>
-      <p>A responsive personal website designed to introduce myself, showcase my skills, and present my projects.</p>
-      <p><strong>Tools:</strong> HTML, CSS, GitHub Pages</p>
-      <a href="https://github.com/" target="_blank">GitHub reference</a>
-    </div>
-    <div class="card project">
-      <h3>02. Student Management System</h3>
-      <p>A sample student management system concept designed to organize student information and make records easier to manage.</p>
-      <p><strong>Tools:</strong> HTML, CSS, JavaScript</p>
-      <span class="accent">Project concept</span>
-    </div>
-  </div>
-  <p><em>Note: These are starter project descriptions. Replace them with your actual completed school projects and screenshots before final submission.</em></p>
-</section>
+        <h1>
+            Hello, I'm
+            <span class="accent">Nerissa S. Fillar.</span>
+        </h1>
 
-<section id="contact">
-  <h2>Contact Me</h2>
-  <div class="card">
-    <p>Thank you for visiting my portfolio! Feel free to contact me.</p>
-    <p>📧 <a class="accent" href="mailto:nrrsfllr@gmail.com">nrrsfllr@gmail.com</a></p>
-  </div>
-</section>
+        <h3>Aspiring IT Professional | Future Web Developer</h3>
 
-<footer>
-  © 2026 Nerissa S. Fillar | IT Student Portfolio
-</footer>
+        <p>
+            Learning, creating, and building my future through technology.
+        </p>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <h2>About Me</h2>
+
+        <div class="card">
+            <h3>Nerissa S. Fillar</h3>
+
+            <p>
+                <strong>Course:</strong>
+                Bachelor of Science in Information Technology
+            </p>
+
+            <br>
+
+            <p>
+                I am an Information Technology student who is passionate
+                about learning new technologies and developing my skills
+                in web development and digital design. I enjoy exploring
+                creative ways to solve problems through technology and
+                creating websites and applications that are both
+                functional and user-friendly. I am always eager to learn
+                new skills, gain experience, and improve my knowledge
+                as I work toward becoming a successful IT professional.
+            </p>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills">
+        <h2>My Skills</h2>
+
+        <div class="skills">
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+            <span class="skill">JavaScript</span>
+            <span class="skill">Canva</span>
+            <span class="skill">Figma</span>
+            <span class="skill">Web Design</span>
+            <span class="skill">Problem Solving</span>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects">
+        <h2>My Projects</h2>
+
+        <div class="project-grid">
+
+            <!-- PROJECT 1 -->
+            <div class="card project">
+
+                <h3>
+                    01. SMAP: A Mobile-Based Convenience Store Finder
+                    with Preference Selection in Brgy. 5, Calamba City
+                </h3>
+
+                <p>
+                    A mobile-based application project designed to help
+                    users find nearby convenience stores in Barangay 5,
+                    Calamba City. It includes preference selection to
+                    help users find stores based on their needs and
+                    preferences.
+                </p>
+
+                <p>
+                    <strong>Project Type:</strong>
+                    Mobile Application
+                </p>
+
+                <p>
+                    <strong>Tools:</strong>
+                    Add the actual tools and technologies used.
+                </p>
+
+            </div>
+
+            <!-- PROJECT 2 -->
+            <div class="card project">
+
+                <h3>
+                    02. Personal Portfolio Website
+                </h3>
+
+                <p>
+                    A personal portfolio website developed to introduce
+                    myself, showcase my technical and design skills,
+                    and present my academic projects as an
+                    Information Technology student.
+                </p>
+
+                <p>
+                    <strong>Tools:</strong>
+                    HTML, CSS, GitHub Pages
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+
+        <div class="card">
+
+            <h3>Let's Connect!</h3>
+
+            <p>
+                Thank you for visiting my portfolio!
+                Feel free to contact me through my email address.
+            </p>
+
+            <br>
+
+            <p>
+                <strong>Email:</strong>
+                <a
+                    class="contact-link"
+                    href="mailto:nrrsfllr@gmail.com">
+                    nrrsfllr@gmail.com
+                </a>
+            </p>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            © 2026 Nerissa S. Fillar |
+            IT Student Portfolio
+        </p>
+    </footer>
+
 </body>
 </html>
